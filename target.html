@@ -13,18 +13,23 @@
 </head>
 <body>
 <div class="container mt-4">
+
     <div class="row">
-        <div class="col-md-4 offset-md-4 border border-medium">
-            <h4 class="font-weight-bold text-center mt-3">Target Ad Here</h4>
-            <a type="button" class="btn btn-primary waves-effect waves-light"
-               onclick="
-                            let submitResult = {};
-                            submitResult.event = 'adCompleted';
-                            submitResult.value = 'rewarded'
-                            console.log('AdCompleted with '+JSON.stringify(submitResult));
-                            HyprNative.customEvent(JSON.stringify(submitResult));
-                    ">Submit</a>
-        </div>
+        <video autoplay id="videoPlayer">
+            <source src="assets/video/target_ad.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <script type='text/javascript'>
+            document.getElementById('videoPlayer').addEventListener('ended',myHandler,false);
+            function myHandler(e) {
+                let submitResult = {};
+                submitResult.event = 'videoCompleted';
+                submitResult.value = 'rewarded'
+                console.log('AdCompleted with '+JSON.stringify(submitResult));
+                HyprNative.customEvent(JSON.stringify(submitResult));
+            }
+        </script>
     </div>
 </div>
 
