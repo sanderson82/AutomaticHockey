@@ -12,26 +12,24 @@
     <title>Hello, world!</title>
 </head>
 <body>
-<div class="container">
 
-    <div class="row">
-        <video autoplay id="videoPlayer">
-            <source src="assets/video/target_ad.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-
-        <script type='text/javascript'>
-            document.getElementById('videoPlayer').addEventListener('ended',myHandler,false);
-            function myHandler(e) {
-                let submitResult = {};
-                submitResult.event = 'videoCompleted';
-                submitResult.value = 'rewarded'
-                console.log('AdCompleted with '+JSON.stringify(submitResult));
-                HyprNative.customEvent(JSON.stringify(submitResult));
-            }
-        </script>
-    </div>
+<div class="fullscreen-bg">
+    <video loop muted autoplay poster="img/videoframe.jpg" class="fullscreen-bg__video" id="videoPlayer">
+        <source src="assets/video/target_ad.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 </div>
+
+<script type='text/javascript'>
+    document.getElementById('videoPlayer').addEventListener('ended',myHandler,false);
+    function myHandler(e) {
+        let submitResult = {};
+        submitResult.event = 'videoCompleted';
+        submitResult.value = 'rewarded'
+        console.log('AdCompleted with '+JSON.stringify(submitResult));
+        HyprNative.customEvent(JSON.stringify(submitResult));
+    }
+</script>
 
 
 <!-- Optional JavaScript; choose one of the two! -->
