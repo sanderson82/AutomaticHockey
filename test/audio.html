@@ -1,22 +1,23 @@
 <html>
-<body>
-<figure>
-    <figcaption>Listen to the T-Rex:</figcaption>
-    <audio
-        id="audioSource"
-        autoplay
-        controls
-        src="sample_audio.mp3">
-            Your browser does not support the
-            <code>audio</code> element.
-    </audio>
-</figure>
 
-<script>
-var audioStream = document.getElementById("audioSource");
-audioStream.onplay = function() {
-  alert("The audio has started to play");
-};
-</script> 
+<body>
+  <figure>
+    <figcaption>Listen to the T-Rex:</figcaption>
+    <audio id="audioSource" autoplay controls src="sample_audio.mp3">
+      Your browser does not support the
+      <code>audio</code> element.
+    </audio>
+  </figure>
+
+  <script>
+    var audioStream = document.getElementById("audioSource");
+    audioStream.onplay = function () {
+      alert("The audio has started to play");
+    };
+    audioStream.onended = function () {
+      alert("The audio has finished to play");
+    };
+  </script>
 </body>
+
 </html>
