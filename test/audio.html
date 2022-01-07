@@ -3,6 +3,7 @@
 <figure>
     <figcaption>Listen to the T-Rex:</figcaption>
     <audio
+        id="audioSource"
         autoplay
         controls
         src="sample_audio.mp3">
@@ -11,5 +12,11 @@
     </audio>
 </figure>
 
+<script>
+var audioStream = document.getElementById("audioSource");
+audioStream.onplay = function() {
+  alert("The audio has started to play");
+};
+</script> 
 </body>
 </html>
