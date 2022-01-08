@@ -11,12 +11,12 @@
 
   <script>
     var audioStream = document.getElementById("audioSource");
-    audioStream.onplay = function () {
-      alert("The audio has started to play");
-    };
-    audioStream.onended = function () {
-      alert("The audio has finished to play");
-    };
+    audioStream.addEventListener('play', function() {
+     console.log("play");
+    },false);
+    audioStream.addEventListener('ended', function() {
+      console.log("ended");
+    },false);
   </script>
 </body>
 
