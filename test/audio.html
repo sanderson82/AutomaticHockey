@@ -1,23 +1,27 @@
 <html>
 
 <body>
-  <figure>
-    <figcaption>Listen to the T-Rex:</figcaption>
-    <audio id="audioSource" autoplay controls src="sample_audio.mp3">
+
+  <audio id="audioSource" autoplay src="audio_ad.mp3">
       Your browser does not support the
       <code>audio</code> element.
-    </audio>
-  </figure>
+   </audio>
+
 
   <script>
     var audioStream = document.getElementById("audioSource");
     audioStream.addEventListener('play', function() {
-     console.log("play");
+      RewardedAudioJSInterface.rewardedAudioStarted();
     },false);
     audioStream.addEventListener('ended', function() {
-      console.log("ended");
+      RewardedAudioJSInterface.rewardedAudioCompleted();
     },false);
   </script>
+
+<a href="https://www.coca-cola.com" onclick="window.open('https://www.coca-cola.com')"><img src='banner.png' style='height: 100%; width: 100%; object-fit: contain'/></a>
+
+  
+
 </body>
 
 </html>
