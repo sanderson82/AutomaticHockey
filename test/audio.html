@@ -2,25 +2,28 @@
 
 <body>
 
-  <audio id="audioSource" autoplay src="audio_ad.mp3">
-      Your browser does not support the
-      <code>audio</code> element.
-   </audio>
+  <audio id="audioSource" autoplay src="https://automatichockey.com/test/audio_ad.mp3">
+    Your browser does not support the
+    <code>audio</code> element.
+  </audio>
 
 
   <script>
     var audioStream = document.getElementById("audioSource");
-    audioStream.addEventListener('play', function() {
+    audioStream.addEventListener('play', function () {
       RewardedAudioJSInterface.rewardedAudioStarted();
-    },false);
-    audioStream.addEventListener('ended', function() {
+    }, false);
+    audioStream.addEventListener('ended', function () {
       RewardedAudioJSInterface.rewardedAudioCompleted();
-    },false);
+    }, false);
   </script>
 
-<a href="https://www.coca-cola.com" onclick="window.open('https://www.coca-cola.com')"><img src='banner.png' style='height: 100%; width: 100%; object-fit: contain'/></a>
+  <a href="https://www.coca-cola.com" onclick="window.open('https://www.coca-cola.com')">
+    <img src='https://automatichockey.com/test/banner.png' style='height: 100%; width: 100%; object-fit: contain' />
+  </a>
+  <img id="close-button" src="https://automatichockey.com/test/close-button.svg"
+    style='height: 20px; width: 20px; position:absolute; top: 0px; right: -20px;' />
 
-  
 
 </body>
 
